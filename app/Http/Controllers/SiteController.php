@@ -30,12 +30,22 @@ class SiteController extends Controller
        $name = $request->name;
        $email = $request->email;
        $message = $request->message;
-
+/*
        return response()->json([
          'message' => 'We received your message!',
          'name' => $name,
          'email' => $email,
          'content' => $message
        ]);
+    }  -----> Hacemos un lado este codigo
+*/
+    $data = [
+    'name' => $name,
+    'email' => $email,
+    'message' => $message
+    ];
+
+    return view('response', $data);
     }
 }
+   
